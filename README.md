@@ -15,7 +15,7 @@ Explore Mykyta Petryk's front-end developer portfolio, built with Vue.js. Discov
 ## Contact
 
 - Email: niknpetrik@gmail.com
-- LinkedIn: [Mykyta Petryk](www.linkedin.com/in/mykyta-petryk-982b6a272)
+- LinkedIn: [Mykyta Petryk](https://www.linkedin.com/in/mykyta-petryk-982b6a272/)
 
 ## Project setup
 ```
