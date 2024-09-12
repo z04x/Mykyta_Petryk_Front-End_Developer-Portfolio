@@ -109,10 +109,6 @@ export default {
         &:last-child {
             align-self: flex-end;
         }
-
-        &-part {
-            /* Style for highlighted parts of the description */
-        }
     }
 
     &__description-wrapper {
