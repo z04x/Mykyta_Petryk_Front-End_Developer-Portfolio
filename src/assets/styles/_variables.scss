@@ -1,40 +1,44 @@
-// Шрифты
-$font-primary: 'Open Sans', sans-serif;
-$font-secondary: 'Martian Mono', monospace;
+// Fonts
+$font-primary: 'Open Sans', sans-serif;  // Primary font
+$font-secondary: 'Martian Mono', monospace;  // Secondary font
 
-// Размеры шрифтов
-$font-size-headline: 112px;
-$font-size-h1: 64px;
-$font-size-h2: 32px;
-$font-size-h3: 24px;
-$font-size-b1: 24px;
-$font-size-b2: 20px;
-$font-size-b3: 16px;
-$font-size-b4: 12px;
+// Font Sizes
+$font-size-headline: 112px; // Headline size
+$font-size-h1: 64px; // Heading 1 size
+$font-size-h2: 32px; // Heading 2 size
+$font-size-h3: 24px; // Heading 3 size
+$font-size-b1: 24px; // Body text size 1
+$font-size-b2: 20px; // Body text size 2
+$font-size-b3: 16px; // Body text size 3
+$font-size-b4: 12px; // Body text size 4
 
-// Жирность шрифта
-$font-weight-regular: 400;
-$font-weight-bold: 700;
+// Font Weights
+$font-weight-regular: 400; // Regular font weight
+$font-weight-bold: 700; // Bold font weight
 
-// Цвета
-$color-text-main: #A6A6A6;
-$color-text-primary: #F5F5F5;
-$color-text-secondary: #FFFFFF;
-$color-text-btn: #121212;
-$color-background: #121212;
-$color-primary: #007bff;
-$color-secondary: #6c757d;
+// Colors
+$color-text-main: #A6A6A6; // Main text color
+$color-text-primary: #F5F5F5; // Primary text color
+$color-btnBg-primary: #F5F5F5; // Primary button background color
+$color-text-secondary: #FFFFFF; // Secondary text color
+$color-text-btn: #121212; // Button text color
+$color-background: #121212; // Background color
+$color-primary: #007bff; // Primary color
+$color-secondary: #6c757d; // Secondary color
+$color-border-primary: #313131; // Primary border color
 
-// Отступы
+// Spacing
+// (Define spacing variables if needed)
 
-// Ширина контейнера
-$container-max-width: 1224px;
+// Container Width
+$container-max-width: 1224px; // Max width for containers
 
-// Брейкпоинты для медиа-запросов
-$breakpoint-xs: 320px;
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1224px;
+// Breakpoints for Media Queries
+$breakpoint-xs: 320px; // Extra small devices
+$breakpoint-sm: 576px; // Small devices
+$breakpoint-md: 768px; // Medium devices
+$breakpoint-lg: 992px; // Large devices
+$breakpoint-xl: 1224px; // Extra large devices
 
-// Другие переменные
+// Other Variables
+// (Define additional variables if needed)

@@ -1,13 +1,16 @@
 <template >
-    <Header />
+  <Header />
+  <HeroSection />
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import HeroSection from './components/HeroSection.vue'
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    HeroSection
   }
 }
 </script>

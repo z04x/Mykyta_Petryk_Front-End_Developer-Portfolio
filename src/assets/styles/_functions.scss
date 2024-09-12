@@ -5,3 +5,20 @@
   @return calc($pixels / 16px * 1rem);
 }
 
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $container-max-width, $widthTo: $breakpoint-xs) {
+  $addSize: $startSize - $minSize;
+
+  #{$property}: calc(#{$minSize + px} + #{strip-unit($addSize)} * ((100vw - #{$widthTo}) / #{strip-unit($widthFrom - $widthTo)}));
+
+  @media (min-width: #{$widthFrom}) {
+    #{$property}: #{$startSize + px};
+  }
+
+  @media (max-width: #{$widthTo}) {
+    #{$property}: #{$minSize + px};
+  }
+}
