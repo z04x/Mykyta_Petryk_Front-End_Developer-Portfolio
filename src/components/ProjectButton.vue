@@ -58,8 +58,18 @@ export default {
     }
 
     &--block {
-        display: block;
-        width: 100%;
+        background-color: $color-btnBg-primary;
+            color: $color-text-btn;
+            opacity: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            gap:8px;
+            padding: 16px 24px;
+            &:hover {
+                    opacity: 0.88;
+                }
     }
 }
 </style>

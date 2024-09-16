@@ -2,9 +2,11 @@
   <HeaderComponent />
   <HeroSection />
   <WorkExperience />
+  <AboutMe/>
 </template>
 
 <script>
+import AboutMe from './components/AboutMeComponent/AboutMe.vue';
 import HeaderComponent from './components/HeaderComponent/Header.vue'
 import HeroSection from './components/HeroSectionComponent/HeroSection.vue'
 import WorkExperience from './components/WorkExperienceComponent/WorkExperience.vue'
@@ -13,7 +15,8 @@ export default {
   components: {
     HeaderComponent,
     HeroSection,
-    WorkExperience
+    WorkExperience,
+    AboutMe
   }
 }
 </script>

@@ -5,7 +5,7 @@
         rel="noopener noreferrer"
         class="social-media-button"
     >
-        <img :src="link.icon" :alt="link.name" class="icon" />
+        <img :src="link.icon" :alt="link.name"  class="icon" />
         {{ link.name }}
     </a>
 </template>
