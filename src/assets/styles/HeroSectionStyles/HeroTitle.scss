@@ -1,0 +1,28 @@
+@import '@/assets/styles/functions';
+@import '@/assets/styles/variables';
+
+.hero-section {
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 112, 40);
+        font-family: $font-secondary;
+        font-weight: $font-weight-bold;
+        color: $color-text-primary;
+        @include adaptiveValue("line-height", 166, 60);
+
+        &:first-child {
+            @include adaptiveValue("padding-top", 48, 80);
+            align-self: flex-start;
+        }
+
+        &:last-child {
+            align-self: flex-end;
+        }
+    }
+}

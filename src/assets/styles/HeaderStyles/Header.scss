@@ -1,0 +1,13 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+@import './HeaderNav.scss';
+@import './HeaderLogo.scss';
+@import './HeaderMenuToggle.scss';
+@import './HeaderMenuContainer.scss';
+@import './HeaderMenu.scss';
+@import './HeaderLanguageSwitcher.scss';
+
+.header {
+    padding: 1rem 0;
+}

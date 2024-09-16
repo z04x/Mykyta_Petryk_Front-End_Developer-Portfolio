@@ -1,16 +1,19 @@
 <template >
-  <Header />
+  <HeaderComponent />
   <HeroSection />
+  <WorkExperience />
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import HeroSection from './components/HeroSection.vue'
+import HeaderComponent from './components/HeaderComponent/Header.vue'
+import HeroSection from './components/HeroSectionComponent/HeroSection.vue'
+import WorkExperience from './components/WorkExperienceComponent/WorkExperience.vue'
 export default {
   name: 'App',
   components: {
-    Header,
-    HeroSection
+    HeaderComponent,
+    HeroSection,
+    WorkExperience
   }
 }
 </script>

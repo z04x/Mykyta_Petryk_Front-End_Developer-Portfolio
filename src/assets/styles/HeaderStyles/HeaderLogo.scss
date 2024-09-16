@@ -1,0 +1,9 @@
+.header__logo {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-b2;
+    font-weight: regular;
+    font-family: $font-secondary;
+    color: $color-text-secondary;
+    gap: rem(5px);
+}

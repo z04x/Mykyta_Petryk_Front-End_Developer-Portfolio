@@ -1,0 +1,15 @@
+@import '@/assets/styles/functions';
+@import '@/assets/styles/variables';
+
+.hero-section {
+    &__social-media-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: rem(48px);
+        @include adaptiveValue("gap", 40, 8);
+        @include adaptiveValue("margin-bottom", 64, 80);
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

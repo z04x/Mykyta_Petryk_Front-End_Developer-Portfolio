@@ -1,0 +1,27 @@
+.header__language-switcher {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-background;
+    gap: rem(8px);
+    margin-left: rem(58px);
+
+    @media (max-width: $breakpoint-md) {
+        margin-top: rem(40);
+        margin-left: 0;
+        flex-direction: row;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: $font-primary;
+        font-size: $font-size-b3;
+        color: $color-text-main;
+        transition: color 0.3s ease;
+
+        &.active {
+            color: $color-text-primary;
+        }
+    }
+}

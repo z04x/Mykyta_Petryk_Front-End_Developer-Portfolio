@@ -1,0 +1,31 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.frontend-experience {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: rem(20);
+    }
+
+    &__title {
+        font-size: $font-size-b4;
+        font-weight: regular;
+        color: $color-text-main;
+        line-height: 1.5;
+    }
+
+    &__total {
+        font-size: $font-size-b3;
+        font-weight: regular;
+        color: $color-text-primary;
+        line-height: 1.5;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+}

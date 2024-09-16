@@ -1,0 +1,25 @@
+@import '@/assets/styles/functions';
+@import '@/assets/styles/variables';
+
+.hero-section {
+
+    &__view-projects-button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-top: rem(31px);
+
+        @media (max-width: $breakpoint-md) {
+            justify-content: center;
+        }
+    }
+
+    &__view-projects-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: rem(271px);
+        width: 100%;
+        gap: rem(30px);
+    }
+}
