@@ -1,0 +1,49 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.about-me {
+    &__section-container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+        flex: 1 1 auto;
+        width: 50%;
+        padding-right: rem(50px);
+    }
+
+    &__section-content {
+        padding: rem(24px);
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        gap: rem(16px);
+        border-radius: rem(36px);
+        color: $color-text-secondary;
+        border: 2px solid rgb(176, 174, 174, 0.25);
+
+        h3 {
+            font-size: $font-size-b1;
+        }
+
+        p {
+            font-size: $font-size-b3;
+            line-height: 2;
+        }
+
+        &-special {
+            display: flex;
+            align-items: center;
+            gap: rem(24px);
+        }
+    }
+        @media (max-width: $breakpoint-md) {
+            &__section-container {
+                    width: auto;
+                    padding-top: rem(24px);
+                }
+            
+                &__section-content {
+                    width: 100%;
+                }
+        }
+}

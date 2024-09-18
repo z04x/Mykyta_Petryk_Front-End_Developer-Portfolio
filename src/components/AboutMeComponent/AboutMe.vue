@@ -64,22 +64,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/styles/variables';
-@import '@/assets/styles/functions';
-
-.about-me {
-    @include adaptiveValue("padding-top", 192, 80);
-
-    &__content {
-        display: flex;
-    }
-
-    @media (max-width: $breakpoint-md) {
-        &__content {
-            flex-direction: column-reverse;
-            align-items: center;
-            width: 100%;
-        }
-    }
-}
+@import '@/assets/styles/AboutMeStyles/AboutMe.scss';
 </style>

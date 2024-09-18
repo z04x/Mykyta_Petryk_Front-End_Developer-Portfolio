@@ -27,12 +27,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/styles/variables';
-@import '@/assets/styles/functions';
-.about-me {
-    &__view-projects-button {
-        margin-top: rem(24px);
-        height: fit-content;
-    }
-}
+@import '@/assets/styles/AboutMeStyles/AboutMeButton.scss';
 </style>

@@ -1,0 +1,8 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+.about-me {
+    &__view-projects-button {
+        margin-top: rem(24px);
+        height: fit-content;
+    }
+}
