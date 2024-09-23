@@ -1,9 +1,18 @@
 <template>
     <Container>
-        <div class="project" v-if="project">
+        <div
+            class="project"
+            v-if="project"
+        >
             <div class="project__content">
-                <h2 class="project__title">{{ project.title }}</h2>
-                <div class="project__tags">
+                <h2
+                    v-if="isDesktop"
+                    class="project__title"
+                >{{ project.title }}</h2>
+                <div
+                    :class="{ 'project__tags--mobile': !isDesktop }"
+                    class="project__tags"
+                >
                     <span
                         v-for="tag in project.tags"
                         :key="tag"
@@ -30,25 +39,46 @@
                     />
                 </ProjectButton>
             </div>
-            <div class="project__images parent" v-if="isDesktop">
-                <div
-                    class="image-placeholder"
+            <div
+                class="project__images parent"
+                v-if="isDesktop"
+            >
+                <img
                     ref="image1"
-                ></div>
-                <div
                     class="image-placeholder"
+                    :src="project.images[0]"
+                    alt="Project Image 1"
+                >
+                <img
                     ref="image2"
-                ></div>
-                <div
                     class="image-placeholder"
+                    :src="project.images[1]"
+                    alt="Project Image 2"
+                >
+                <img
                     ref="image3"
-                ></div>
+                    class="image-placeholder"
+                    :src="project.images[2]"
+                    alt="Project Image 3"
+                >
             </div>
-            <div class="project__carousel" v-else>
+            <div
+                class="project__carousel"
+                v-else
+            >
+                <h2 class="project__title">
+                    {{ project.title }}
+                </h2>
                 <swiper :options="swiperOptions">
-                    <swiper-slide v-for="(image, index) in images" :key="index">
-                        <div class="image-placeholder"></div>
+                    <swiper-slide
+                        v-for="(image, index) in project.images"
+                        :key="index"
+                    >
+                        <div class="image-placeholder">
+                            <img :src="image" alt="Project Image">
+                        </div>
                     </swiper-slide>
+                    <div class="swiper-pagination"></div>
                 </swiper>
             </div>
         </div>
@@ -64,7 +94,6 @@ import Container from '@/components/Container.vue';
 import ProjectButton from '../ProjectButton.vue';
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
-import { useI18n } from 'vue-i18n';
 
 export default {
     name: 'Project',
@@ -78,29 +107,34 @@ export default {
         id: {
             type: Number,
             required: true,
-        },
+        }
     },
     data() {
         return {
-            project: projects.find((proj) => proj.id === this.id),
+            project: null,
             isDesktop: window.innerWidth >= 768,
             swiperOptions: {
                 slidesPerView: 1,
-                spaceBetween: 10,
+                spaceBetween: 10, // Добавьте отступ между слайдами
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
             },
-            images: [1, 2, 3] // Массив для изображений
+            combinationIndex: 0 // Добавьте индекс для отслеживания текущей комбинации
         };
+    },
+    created() {
+        this.project = projects.find((proj) => proj.id === this.id);
+        console.log('Project ID:', this.id);
+        console.log('Project:', this.project);
     },
     computed: {
         translatedDescription() {
             if (this.project && this.project.descriptionKey) {
                 return this.$t(this.project.descriptionKey);
             }
-            return this.project.description || '';
+            return this.project ? this.project.description : '';
         }
     },
     mounted() {
@@ -127,28 +161,19 @@ export default {
                     { gridArea: '2 / 2 / 3 / 3' }
                 ],
                 [
-                    { gridArea: '2 / 1 / 3 / 2' },
-                    { gridArea: '1 / 1 / 2 / 2' },
-                    { gridArea: '1 / 2 / 3 / 3' }
-                ],
-                [
                     { gridArea: '2 / 1 / 3 / 3' },
                     { gridArea: '1 / 1 / 2 / 2' },
                     { gridArea: '1 / 2 / 2 / 3' }
                 ],
-                [
-                    { gridArea: '1 / 1 / 2 / 2' },
-                    { gridArea: '2 / 1 / 3 / 2' },
-                    { gridArea: '1 / 2 / 3 / 3' }
-                ]
             ];
 
-            // Выбор случайной комбинации
-            const randomCombination = combinations[Math.floor(Math.random() * combinations.length)];
+            this.combinationIndex = (this.combinationIndex + 1) % combinations.length;
+            const combination = combinations[this.combinationIndex];
+
 
             // Применение позиций к изображениям
             images.forEach((image, index) => {
-                image.style.gridArea = randomCombination[index].gridArea;
+                image.style.gridArea = combination[index].gridArea;
             });
         }
     }
@@ -167,12 +192,12 @@ export default {
     justify-content: space-between;
     height: 100%;   
     @media (max-width: 768px) {
-            flex-direction: column-reverse;
-        }
+        flex-direction: column-reverse;
+    }
     &__content {
         display: flex;
         flex-direction: column;
-        width: 32.2%;
+        width: 40.2%;
         @media (max-width: 768px) {
             width: 100%;
         }
@@ -182,6 +207,12 @@ export default {
         font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: rem(24px);
+        &--mobile {
+            @media (max-width: 768px) {
+                order: -1;
+                margin-bottom: rem(16px);
+            }
+        }
     }
 
     &__tags {
@@ -189,6 +220,9 @@ export default {
         flex-wrap: wrap;
         gap: rem(16px);
         padding-bottom: rem(16px);
+        &--mobile {
+            padding-top: rem(16px);
+        }
     }
 
     &__tag {
@@ -215,28 +249,52 @@ export default {
         gap: 1rem;
         margin-top: 1rem;
         width: 57.5%;
-        @media (max-width: 768px) {
-        }
+        max-height: rem(660px);
+        height: 100%;
         .image-placeholder {
-            background-color: #555;
+            object-fit: cover;
+            overflow: hidden;
             border-radius: 10px;
-            
+            background-color: #555;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }   
         }
     }
 
-         &__carousel {
-            width: 100%;
-             .swiper-slide {
-                 .image-placeholder {
-                    background-color: #555;
+    &__carousel {
+        .swiper-slide {
+            .image-placeholder {
+                height: 50%; // Примерная высота для карусели
+                width: 100%;
+                border-radius: 10px;
+                img {
                     border-radius: 10px;
-                    height: 340px; // Примерная высота для карусели
-                 }
-             }
-         }
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 98%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
 
     &__view-projects-button {
         height: fit-content;
+    }
+
+    &__content--mobile {
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
     }
 }
 </style>

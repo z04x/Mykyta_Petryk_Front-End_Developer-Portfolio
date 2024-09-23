@@ -3,8 +3,11 @@
   <HeroSection />
   <WorkExperience />
   <AboutMe />
-  <Project :id="1" />
-  <Project :id="2" />
+  <Project
+    v-for="project in projects"
+    :key="project.id"
+    :id="project.id"
+  />
 </template>
 
 <script>
@@ -13,6 +16,7 @@ import HeaderComponent from './components/HeaderComponent/Header.vue'
 import HeroSection from './components/HeroSectionComponent/HeroSection.vue'
 import WorkExperience from './components/WorkExperienceComponent/WorkExperience.vue'
 import Project from './components/ProjectComponent/Project.vue';
+import { projects } from './constants/project-constants';
 export default {
   name: 'App',
   components: {
@@ -21,6 +25,11 @@ export default {
     WorkExperience,
     AboutMe,
     Project
+  },
+  data() {
+    return {
+      projects
+    };
   }
 }
 </script>
