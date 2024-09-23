@@ -41,25 +41,24 @@ export default {
     },
     data() {
         return {
-            frontEndSkills: `
-        <span class="highlight">Frontend-Entwicklung:</span> React, Vue, TypeScript, JavaScript (ES6+)
-        <br>
-        <span class="highlight">Entwicklungstools:</span> Gulp, Webpack, Git, Jira, GitHub
-      `,
-            stylesSkills: `
-        <span class="highlight">UI/UX:</span> Material-UI, responsives Design (CSS3, SCSS, Flexbox, Grid), Animationen
-        <br>
-        <span class="highlight">Leistungsoptimierung:</span> Lazy Loading, Code Splitting, Ladezeitoptimierung
-        <br>
-        <span class="highlight">Build & Automatisierung:</span> Gulp, Webpack, CI/CD-Pipelines
-      `,
-            dataSkills: `
-        <span class="highlight">API und Integrationen:</span> REST API, WebSocket, SDKs (Telegram, Jira, GitHub)
-        <br>
-        <span class="highlight">Grundkenntnisse in Python:</span> Einfache Automatisierungen und Skripterstellung
-      `,
+            frontEndSkills: '',
+            stylesSkills: '',
+            dataSkills: ''
         };
     },
+    created() {
+        this.updateSkills();
+    },
+    watch: {
+        '$i18n.locale': 'updateSkills'
+    },
+    methods: {
+        updateSkills() {
+            this.frontEndSkills = this.$t('aboutMe.frontEndSkills');
+            this.stylesSkills = this.$t('aboutMe.stylesSkills');
+            this.dataSkills = this.$t('aboutMe.dataSkills');
+        }
+    }
 };
 </script>
 

@@ -3,6 +3,7 @@
 
 .about-me {
     @include adaptiveValue("padding-top", 192, 80);
+    @include adaptiveValue("padding-bottom", 96, 80);
 
     &__content {
         display: flex;

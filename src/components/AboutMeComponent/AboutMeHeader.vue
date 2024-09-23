@@ -1,13 +1,14 @@
 <template>
     <div class="about-me__header">
-        <h2 class="about-me__title">&lt;About me&gt;</h2>
+        <h2 class="about-me__title">&lt;{{ $t('aboutMe.title') }}&gt;</h2>
         <p class="about-me__description">
-            Lorem ipsum dolor sit amet consectetur. Rhoncus fermentum turpis ullamcorper tortor.
+            {{ $t('aboutMe.description') }}
         </p>
     </div>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 export default {
     name: 'AboutMeHeader',
 };
