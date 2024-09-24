@@ -1,0 +1,36 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+.project {
+    &__title {
+        font-family: $font-secondary;
+        font-weight: medium;
+        font-size: $font-size-h3;
+        margin-bottom: rem(16px);
+    }
+
+    &__carousel {
+        .swiper-slide {
+            .image-placeholder {
+                height: 50%;
+                width: 100%;
+                border-radius: 10px;
+
+                img {
+                    border-radius: 10px;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 98%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+    }
+}

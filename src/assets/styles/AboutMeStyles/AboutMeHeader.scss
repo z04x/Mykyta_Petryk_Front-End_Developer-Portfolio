@@ -7,7 +7,7 @@
         align-items: center;
         justify-content: center;
         gap: rem(10px);
-        @include adaptiveValue("padding-bottom", 46, 0);
+        @include adaptiveValue("padding-bottom", 46, 24);
     }
 
     &__title {

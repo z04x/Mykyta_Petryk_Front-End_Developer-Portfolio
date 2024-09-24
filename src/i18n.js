@@ -37,6 +37,7 @@ const messages = {
             `
         },
         projects: {
+            title: 'MyProjects',
             forgetai: 'Development and implementation of AI solutions such as ChatGPT and Mistral for deep user interactions \n Creation of automated tools for generating sales-promoting prompts with advanced analytics \n Use of React, React Hooks, React Router, and Material-UI (MUI) for scalable user interfaces \n Integration of SDKs for Telegram, Jira, and GitHub to improve team collaboration \n Optimization of the platform for the introduction of new models and features',
         }
     },
@@ -76,6 +77,7 @@ const messages = {
             `
         },
         projects: {
+            title: 'Meine Projekte',
             forgetai: 'Entwicklung und Implementierung von KI-Lösungen wie ChatGPT und Mistral für tiefgehende Nutzerinteraktionen \n Erstellung automatisierter Tools zur Generierung verkaufsfördernder Prompts mit fortschrittlicher Analytik \n Nutzung von React, React Hooks, React Router und Material-UI (MUI) für skalierbare Benutzeroberflächen \n Integration von SDKs für Telegram, Jira und GitHub zur Verbesserung der Team-Zusammenarbeit \n Optimierung der Plattform für die Einführung neuer Modelle und Funktionen',
         }
     }
