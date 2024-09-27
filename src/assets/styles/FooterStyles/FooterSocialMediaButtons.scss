@@ -1,0 +1,18 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.footer {
+    &__socials-buttons {
+        @include adaptiveValue('padding-top', 48, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptiveValue('gap', 40, 8);
+    margin-bottom: rem(24);
+
+    @media (max-width: $breakpoint-md) {
+        margin-bottom: 0;
+        }
+    }
+}

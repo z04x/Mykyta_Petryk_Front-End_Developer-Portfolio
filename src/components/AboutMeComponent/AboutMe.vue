@@ -3,7 +3,6 @@
         <section class="about-me">
             <!-- Header Section -->
             <AboutMeHeader />
-
             <!-- Content Section -->
             <div class="about-me__content">
                 <!-- Sections Container -->
@@ -12,11 +11,9 @@
                     :styles-skills="stylesSkills"
                     :data-skills="dataSkills"
                 />
-
                 <!-- Image Container -->
                 <AboutMeImage />
             </div>
-
             <!-- Project Button -->
             <AboutMeButton />
         </section>

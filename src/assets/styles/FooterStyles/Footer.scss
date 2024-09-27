@@ -1,0 +1,19 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.footer {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue('padding-top', 96, 0);
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        @include adaptiveValue('gap', 48, 0);
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+        }
+    }
+}

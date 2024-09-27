@@ -4,6 +4,7 @@
   <WorkExperience />
   <AboutMe />
   <ProjectContainer />
+  <Footer />
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import HeaderComponent from './components/HeaderComponent/Header.vue'
 import HeroSection from './components/HeroSectionComponent/HeroSection.vue'
 import WorkExperience from './components/WorkExperienceComponent/WorkExperience.vue'
 import ProjectContainer from './components/ProjectComponent/ProjectsContainer.vue';
+import Footer from './components/FooterComponent/Footer.vue';
 import { projects } from './constants/project-constants';
 export default {
   name: 'App',
@@ -20,7 +22,8 @@ export default {
     HeroSection,
     WorkExperience,
     AboutMe,
-    ProjectContainer
+    ProjectContainer,
+    Footer
   },
   data() {
     return {

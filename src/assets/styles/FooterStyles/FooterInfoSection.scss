@@ -1,0 +1,56 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/functions';
+
+.footer {
+    &__info-title {
+        font-family: $font-secondary;
+        font-size: $font-size-b1;
+        font-weight: medium;
+        color: $color-text-secondary;
+        line-height: 1.5;
+        padding-bottom: rem(24);
+    }
+    &__nav {
+        display: flex;
+        @include adaptiveValue('gap', 48, 24);
+        padding-bottom: rem(24);
+        flex-wrap: wrap;
+    }
+    &__link {
+        font-size: $font-size-b2;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-text-secondary;
+        }
+    }
+    &__contacts {
+        padding: rem(24);
+        border-radius: rem(36);
+        border: 1px solid #B0AEAE;
+    }
+    &__contact-info {
+        line-height: 1.5;
+        color: $color-text-primary;
+        display: flex;
+        gap: rem(32);
+
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+        }
+    }
+    &__contact-title {
+        font-size: $font-size-b2;
+        color: $color-text-main;
+        padding-bottom: rem(16);
+    }
+    &__contact-creators {
+        font-size: $font-size-b3;
+        p:not(:last-child) {
+            padding-bottom: rem(8);
+        }
+    }
+    &__contact-phone {
+        font-size: $font-size-b3;
+    }
+}
